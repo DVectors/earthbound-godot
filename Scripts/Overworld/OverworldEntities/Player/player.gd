@@ -4,12 +4,18 @@ extends CharacterBody2D
 ## Export vars
 @export var speed: float = 125.0
 @export var animation_tree : AnimationTree
+@export var skin_manager : SkinManager
+@export var default_skin_id : StringName = &"default"
 
 var input : Vector2
 var playback : AnimationNodeStateMachinePlayback
 
 func _ready() -> void:
     playback = animation_tree["parameters/playback"]
+    
+    # Apply default skin
+    skin_manager.set_skins() # Sets up skin dictionary, making it easier for looking up specific skins
+    skin_manager.apply_skin(default_skin_id)
 
 func _physics_process(delta: float) -> void:
     input = Input.get_vector("left", "right", "up", "down")

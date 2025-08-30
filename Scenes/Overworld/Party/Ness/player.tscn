@@ -1,7 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://d0pbompq2bt1g"]
+[gd_scene load_steps=43 format=3 uid="uid://d0pbompq2bt1g"]
 
 [ext_resource type="Script" uid="uid://l0iqcrh07du7" path="res://Scripts/Overworld/OverworldEntities/Player/player.gd" id="1_oxpkw"]
+[ext_resource type="Resource" uid="uid://cemcccs2ngotk" path="res://Resources/Party/Ness/NessSkins.tres" id="2_lkgp2"]
 [ext_resource type="Texture2D" uid="uid://dln2ig8f58jvq" path="res://Sprites/Overworld/Party/Ness/Ness.png" id="2_wtsyr"]
+[ext_resource type="Script" uid="uid://en80ha4aaoy6" path="res://Scripts/Skins/SkinManager.gd" id="4_lkgp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctume"]
 
@@ -422,9 +424,10 @@ states/Idle/position = Vector2(345, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_sha1m")
 states/Walk/position = Vector2(458, 99)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "skin_manager")]
 script = ExtResource("1_oxpkw")
 animation_tree = NodePath("AnimationTree")
+skin_manager = NodePath("SkinManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wtsyr")
@@ -445,3 +448,9 @@ tree_root = SubResource("AnimationNodeStateMachine_kfvj3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.00191694, 1.01896)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="SkinManager" type="Node" parent="." node_paths=PackedStringArray("sprite_2d")]
+script = ExtResource("4_lkgp2")
+sprite_2d = NodePath("../Sprite2D")
+skins_library = ExtResource("2_lkgp2")
+metadata/_custom_type_script = "uid://en80ha4aaoy6"

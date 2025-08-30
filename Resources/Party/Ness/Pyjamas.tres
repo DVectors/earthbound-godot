@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=3 format=3 uid="uid://d3kdtqh66p0o7"]
+
+[ext_resource type="Script" uid="uid://b5tlww0obl0m6" path="res://Resources/Party/SkinData.gd" id="1_4eyhu"]
+[ext_resource type="Texture2D" uid="uid://bauxvgbly85cu" path="res://Sprites/Overworld/Party/Ness/Ness (Pyjamas).png" id="2_32l20"]
+
+[resource]
+script = ExtResource("1_4eyhu")
+id = &"pyjamas"
+display_name = "Pyjamas"
+texture = ExtResource("2_32l20")
+hframes = 17
+vframes = 1
+metadata/_custom_type_script = "uid://b5tlww0obl0m6"
