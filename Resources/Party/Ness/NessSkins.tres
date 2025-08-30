@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="SkinLibrary" load_steps=5 format=3 uid="uid://cemcccs2ngotk"]
+[gd_resource type="Resource" script_class="SkinLibrary" load_steps=6 format=3 uid="uid://cemcccs2ngotk"]
 
 [ext_resource type="Script" uid="uid://b6rplekb7a645" path="res://Resources/Party/SkinLibrary.gd" id="1_calvb"]
 [ext_resource type="Script" uid="uid://b5tlww0obl0m6" path="res://Resources/Party/SkinData.gd" id="2_2fqe4"]
 [ext_resource type="Resource" uid="uid://wa5i3skhnoyg" path="res://Resources/Party/Ness/Default.tres" id="3_6lf7f"]
 [ext_resource type="Resource" uid="uid://d3kdtqh66p0o7" path="res://Resources/Party/Ness/Pyjamas.tres" id="4_j3m1n"]
+[ext_resource type="Resource" uid="uid://o8iameqi2qc2" path="res://Resources/Party/Ness/Robot (Ness).tres" id="5_j3m1n"]
 
 [resource]
 script = ExtResource("1_calvb")
 default_skin_id = &"default"
-skins = Array[ExtResource("2_2fqe4")]([ExtResource("3_6lf7f"), ExtResource("4_j3m1n")])
+skins = Array[ExtResource("2_2fqe4")]([ExtResource("3_6lf7f"), ExtResource("4_j3m1n"), ExtResource("5_j3m1n")])
 metadata/_custom_type_script = "uid://b6rplekb7a645"
