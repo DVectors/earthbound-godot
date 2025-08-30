@@ -1,11 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0pbompq2bt1g"]
+[gd_scene load_steps=42 format=3 uid="uid://brcgo2mesl6w0"]
 
-[ext_resource type="Script" uid="uid://l0iqcrh07du7" path="res://Scripts/Overworld/OverworldEntities/Party/player.gd" id="1_noy53"]
-[ext_resource type="Resource" uid="uid://cemcccs2ngotk" path="res://Resources/Party/Ness/NessSkins.tres" id="2_lkgp2"]
-[ext_resource type="Texture2D" uid="uid://dln2ig8f58jvq" path="res://Sprites/Overworld/Party/Ness/Ness.png" id="2_wtsyr"]
-[ext_resource type="Script" uid="uid://en80ha4aaoy6" path="res://Scripts/Skins/SkinManager.gd" id="4_lkgp2"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ctume"]
+[ext_resource type="Script" uid="uid://d07jub11ymptv" path="res://Scripts/Overworld/OverworldEntities/Party/follower.gd" id="1_ti071"]
+[ext_resource type="Texture2D" uid="uid://dln2ig8f58jvq" path="res://Sprites/Overworld/Party/Ness/Ness.png" id="2_r1lxx"]
+[ext_resource type="Script" uid="uid://en80ha4aaoy6" path="res://Scripts/Skins/SkinManager.gd" id="3_31fq5"]
+[ext_resource type="Resource" uid="uid://cemcccs2ngotk" path="res://Resources/Party/Ness/NessSkins.tres" id="4_bd4d4"]
 
 [sub_resource type="Animation" id="Animation_6llo6"]
 length = 0.001
@@ -418,25 +416,21 @@ blend_point_7/node = SubResource("AnimationNodeAnimation_ukeg3")
 blend_point_7/pos = Vector2(-0.6, 0.6)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kfvj3"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_url7o"]
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_ksiy5")
 states/Idle/position = Vector2(345, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_sha1m")
 states/Walk/position = Vector2(458, 99)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "skin_manager")]
-script = ExtResource("1_noy53")
+[node name="TestFollower" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "skin_manager")]
+script = ExtResource("1_ti071")
 animation_tree = NodePath("AnimationTree")
 skin_manager = NodePath("SkinManager")
+default_skin_id = &"robot"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wtsyr")
+texture = ExtResource("2_r1lxx")
 hframes = 20
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.59)
-scale = Vector2(0.915, 0.915)
-shape = SubResource("CircleShape2D_ctume")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -444,13 +438,13 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_kfvj3")
+tree_root = SubResource("AnimationNodeStateMachine_url7o")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.00191694, 1.01896)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="SkinManager" type="Node" parent="." node_paths=PackedStringArray("sprite_2d")]
-script = ExtResource("4_lkgp2")
+script = ExtResource("3_31fq5")
 sprite_2d = NodePath("../Sprite2D")
-skins_library = ExtResource("2_lkgp2")
+skins_library = ExtResource("4_bd4d4")
 metadata/_custom_type_script = "uid://en80ha4aaoy6"

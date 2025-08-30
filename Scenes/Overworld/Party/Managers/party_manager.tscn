@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://pekopmgnphpq"]
+
+[ext_resource type="Script" uid="uid://ckb7d6qsydy1g" path="res://Scripts/Overworld/OverworldEntities/Party/Managers/PartyManager.gd" id="1_p3q27"]
+[ext_resource type="PackedScene" uid="uid://brcgo2mesl6w0" path="res://Scenes/Overworld/Party/TestFollower/test_follower.tscn" id="2_14ng1"]
+
+[node name="PartyManager" type="Node2D" node_paths=PackedStringArray("leader")]
+script = ExtResource("1_p3q27")
+leader = NodePath("")
+members = Array[PackedScene]([ExtResource("2_14ng1")])
+metadata/_custom_type_script = "uid://ckb7d6qsydy1g"
