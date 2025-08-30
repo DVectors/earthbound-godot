@@ -14,4 +14,4 @@ texture = ExtResource("1_o2iy2")
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.305, 3.305)
+zoom = Vector2(3.3, 3.3)
