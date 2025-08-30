@@ -4,6 +4,8 @@ extends PartyEntity
 var _has_target := false
 var _target := Vector2.ZERO
 
+@export var stop_radius := 6.0       # don't jitter at the target
+
 func set_follow_target(point: Vector2) -> void:
     _has_target = true
     _target = point
@@ -19,8 +21,9 @@ func _follower_move() -> void:
         velocity = Vector2.ZERO
         return
     
-    direction = _target - global_position
-#    if to_target.length() > stop_radius:
-#        velocity = to_target.normalized() * move_speed
-#    else:
-#        velocity = Vector2.ZERO
+    var to_target := _target - global_position
+    if to_target.length() > stop_radius:
+        direction = to_target.normalized()
+    else:
+        direction = Vector2.ZERO
+        
