@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://onyem3iuja3f"]
+
+[ext_resource type="Texture2D" uid="uid://c42pek6swunjv" path="res://Sprites/Overworld/Rooms/HappyHappyVillage.png" id="1_o2iy2"]
+[ext_resource type="PackedScene" uid="uid://d0pbompq2bt1g" path="res://Scenes/Overworld/Party/Ness/player.tscn" id="2_w8j1w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o2iy2")
+
+[node name="Player" parent="." instance=ExtResource("2_w8j1w")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.305, 3.305)
