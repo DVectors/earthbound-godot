@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkinData" load_steps=3 format=3 uid="uid://o8iameqi2qc2"]
 
-[ext_resource type="Script" uid="uid://b5tlww0obl0m6" path="res://Resources/Party/SkinData.gd" id="1_6r2be"]
+[ext_resource type="Script" uid="uid://b5tlww0obl0m6" path="res://Scripts/Skins/SkinData.gd" id="1_6r2be"]
 [ext_resource type="Texture2D" uid="uid://cirqgpsljs3p1" path="res://Sprites/Overworld/Party/Ness/Ness (Robot).png" id="2_1ar2a"]
 
 [resource]
